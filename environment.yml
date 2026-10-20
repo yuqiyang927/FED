@@ -1,0 +1,11 @@
+
+name: fed-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pandas
+  - matplotlib
+  - jupyter
+  - ipykernel
+  - pip

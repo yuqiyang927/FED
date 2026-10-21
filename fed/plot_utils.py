@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 def plot_gdp_data(df):
-    """Plot GDP by country from 2000 to 2022."""
+    """Plot Annual GDP by country from 2000 to 2022."""
     fig, ax = plt.subplots(figsize=(12, 6))
 
     for country, country_data in df.groupby("Country Name"):
@@ -13,7 +13,7 @@ def plot_gdp_data(df):
             label=country,
         )
 
-    ax.set_title("GDP by Country, 2000–2022")
+    ax.set_title("Annual GDP by Country, 2000–2022")
     ax.set_xlabel("Year")
     ax.set_ylabel("GDP (constant US$, trillions)")
     ax.set_xlim(2000, 2022)

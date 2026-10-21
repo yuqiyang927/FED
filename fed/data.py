@@ -4,6 +4,8 @@ import pandas as pd
 
 
 def load_gdp_data():
+    """Load raw GDP data from the World Bank CSV file."""
+    
     data_path = (
         Path(__file__).resolve().parent.parent
         / "data"
@@ -17,6 +19,8 @@ def load_gdp_data():
 
 
 def clean_gdp_data(df):
+    """Filter and reshape GDP data for the selected countries and years."""
+
     countries = [
         "United Kingdom",
         "United States",

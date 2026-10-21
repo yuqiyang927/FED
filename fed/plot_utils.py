@@ -27,6 +27,5 @@ def plot_gdp_data(df):
     ax.legend(title="Country")
     ax.grid(alpha=0.3)
     fig.tight_layout()
-    plt.show()
-
+    
     return fig, ax

@@ -1,5 +1,4 @@
 from pathlib import Path
-
 import pandas as pd
 
 
@@ -46,4 +45,3 @@ def clean_gdp_data(df):
     df["Year"] = df["Year"].astype(int)
 
     return df
-

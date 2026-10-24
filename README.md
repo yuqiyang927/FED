@@ -43,11 +43,24 @@ The functions in `fed/data.py` handle data loading and cleaning:
 - `load_gdp_data()`: Reads the raw GDP data from the CSV file
 - `clean_gdp_data(df)`: Filters seven countries, selects years 2000–2022, reshapes the data from wide to long format, and converts `Year` to an integer
 
-### Usage
+## Data Visualisation
+
+The `plot_gdp_data(df)` function in `fed/plot_utils.py` plots annual real GDP for the seven selected countries from 2000 to 2022.
+
+## Usage
 
 ```python
+import matplotlib.pyplot as plt
+
 from fed.data import load_gdp_data, clean_gdp_data
+from fed.plot_utils import plot_gdp_data
 
 raw_gdp = load_gdp_data()
 gdp = clean_gdp_data(raw_gdp)
+
+fig, ax = plot_gdp_data(gdp)
+plt.show()
+```
+
+The `gdp_analysis.ipynb` notebook demonstrates this workflow and provides a brief discussion of GDP development across countries.
 ```

@@ -1,6 +1,11 @@
 import matplotlib.pyplot as plt
+import pandas as pd
+from matplotlib.axes import Axes
+from matplotlib.figure import Figure
+from matplotlib.ticker import FuncFormatter
 
-def plot_gdp_data(df):
+
+def plot_gdp_data(df: pd.DataFrame) -> tuple[Figure, Axes]:
     """Plot Annual GDP by country from 2000 to 2022."""
     fig, ax = plt.subplots(figsize=(12, 6))
 
@@ -21,11 +26,11 @@ def plot_gdp_data(df):
 
     # Display GDP values in trillions
     ax.yaxis.set_major_formatter(
-        plt.FuncFormatter(lambda value, position: f"{value / 1e12:.1f}")
+        FuncFormatter(lambda value, position: f"{value / 1e12:.1f}"),
     )
 
     ax.legend(title="Country")
     ax.grid(alpha=0.3)
     fig.tight_layout()
-    
+
     return fig, ax

@@ -2,9 +2,9 @@ from pathlib import Path
 import pandas as pd
 
 
-def load_gdp_data():
+def load_gdp_data() -> pd.DataFrame:
     """Load raw GDP data from the World Bank CSV file."""
-    
+
     data_path = (
         Path(__file__).resolve().parent.parent
         / "data"
@@ -16,8 +16,7 @@ def load_gdp_data():
     return df
 
 
-
-def clean_gdp_data(df):
+def clean_gdp_data(df: pd.DataFrame) -> pd.DataFrame:
     """Filter and reshape GDP data for the selected countries and years."""
 
     countries = [
